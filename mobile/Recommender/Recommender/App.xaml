@@ -43,13 +43,14 @@
             <Color x:Key="TabBarColor">#273B51</Color>
             <Color x:Key="SelectedTabBarcolor">#36C4C4</Color>
 
-            <Color x:Key="AccentColor">#149898</Color>
+            <Color x:Key="AccentColor">#93278f</Color>
 
              <!--Light Blue color on Nav--> 
             <Color x:Key="NavigationPrimary">#5DA1F7</Color>
 
              <!--Dark Blue/Purple Background Color--> 
-            <Color x:Key="BackgroundColor">#0F243C</Color>
+            <!--<Color x:Key="BackgroundColor">#0F243C</Color>-->
+            <Color x:Key="BackgroundColor">#FFFFFF</Color>
 
             <Style TargetType="NavigationPage">
                 <Setter Property="BarTextColor" Value="White" />
@@ -58,6 +59,7 @@
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+                <Setter Property="BackgroundImageSource" Value="background.xml"/>
             </Style>
 
              <!--This is for the side panels of the background that are not in the scope of the content page background--> 

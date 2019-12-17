@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Recommender.Views;
+
 namespace Recommender.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -15,6 +17,11 @@ namespace Recommender.Views
         public FirstOnboardingPage()
         {
             InitializeComponent();
+        }
+
+        private async void Redirect(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new PersonasPage()).ConfigureAwait(false);
         }
     }
 }

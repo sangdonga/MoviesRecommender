@@ -70,7 +70,8 @@
                     <Button
                         FontAttributes="Bold"
                         Style="{StaticResource Accent2ColorButtonStyle}"
-                        Text="next" />
+                        Text="next" 
+                        Clicked="Redirect"/>
 
                 </StackLayout>
 

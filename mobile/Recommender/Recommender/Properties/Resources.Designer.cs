@@ -61,6 +61,15 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Internal error while requesting information from server..
+        /// </summary>
+        internal static string InternalErrorMessage {
+            get {
+                return ResourceManager.GetString("InternalErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not connect to internet. Check your connectivity..
         /// </summary>
         internal static string NoInternetMessage {
@@ -79,7 +88,7 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://52.184.159.77:5000/onboarding.
+        ///   Looks up a localized string similar to http://app-apis.azurewebsites.net/onboarding.
         /// </summary>
         internal static string OnboardingEndpoint {
             get {
@@ -88,7 +97,7 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://52.184.159.77:5000/personas.
+        ///   Looks up a localized string similar to http://app-apis.azurewebsites.net/personas.
         /// </summary>
         internal static string PersonasEndpoint {
             get {
@@ -97,7 +106,7 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://52.184.159.77:5000/popular-movies.
+        ///   Looks up a localized string similar to http://app-apis.azurewebsites.net/popular-movies.
         /// </summary>
         internal static string PopularEndpoint {
             get {
@@ -106,7 +115,7 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://52.184.159.77:5000/recommendations.
+        ///   Looks up a localized string similar to http://app-apis.azurewebsites.net/recommendations.
         /// </summary>
         internal static string RecommendationEndpoint {
             get {
@@ -124,7 +133,7 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://52.184.159.77:5000/search.
+        ///   Looks up a localized string similar to http://app-apis.azurewebsites.net/search.
         /// </summary>
         internal static string SearchEndpoint {
             get {

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="InternalErrorMessage" xml:space="preserve">
+    <value>Internal error while requesting information from server.</value>
+  </data>
   <data name="NoInternetMessage" xml:space="preserve">
     <value>Could not connect to internet. Check your connectivity.</value>
   </data>
@@ -124,21 +127,21 @@
     <value>Object is not a movie!</value>
   </data>
   <data name="OnboardingEndpoint" xml:space="preserve">
-    <value>http://52.184.159.77:5000/onboarding</value>
+    <value>http://app-apis.azurewebsites.net/onboarding</value>
   </data>
   <data name="PersonasEndpoint" xml:space="preserve">
-    <value>http://52.184.159.77:5000/personas</value>
+    <value>http://app-apis.azurewebsites.net/personas</value>
   </data>
   <data name="PopularEndpoint" xml:space="preserve">
-    <value>http://52.184.159.77:5000/popular-movies</value>
+    <value>http://app-apis.azurewebsites.net/popular-movies</value>
   </data>
   <data name="RecommendationEndpoint" xml:space="preserve">
-    <value>http://52.184.159.77:5000/recommendations</value>
+    <value>http://app-apis.azurewebsites.net/recommendations</value>
   </data>
   <data name="SarDescription" xml:space="preserve">
     <value>The Simple Algorithm for Recommendation (SAR) uses collaborative filtering to provide recommendations based only on prior interactions between users and items. It uses the similarity between items determined by their co-occurrence and makes recommendations based on a user's affinity for similar items. Eg, if Alice likes movies A, B, C and Bob likes movies B, C, D, SAR could recommend D to Alice and A to Bob.</value>
   </data>
   <data name="SearchEndpoint" xml:space="preserve">
-    <value>http://52.184.159.77:5000/search</value>
+    <value>http://app-apis.azurewebsites.net/search</value>
   </data>
 </root>
