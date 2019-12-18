@@ -159,7 +159,7 @@
                 BackgroundColor="{Binding NextButtonBackgroundColor}"
                 BorderColor="{Binding ButtonBorder}"
                 BorderWidth="3"
-                Text="next"
+                Text="Next"
                 FontAttributes="Bold"
                 Clicked="RedirectToMainPage" />
         </StackLayout>

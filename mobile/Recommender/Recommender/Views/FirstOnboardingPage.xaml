@@ -8,7 +8,6 @@
              x:Class="Recommender.Views.FirstOnboardingPage">
     <ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never">
-
             <Grid>
                 <Grid.Padding>
                     <Thickness Left="{StaticResource Default2Margin}"
@@ -47,7 +46,7 @@
                            HorizontalOptions="Start"
                            Margin="0,0,0,25" />
 
-                    <Label FontFamily="{StaticResource QuicksandSemiBold}"
+                    <Label FontFamily="{StaticResource MontserratSemiBold}"
                            FontSize="Large"
                            Text="Let's Select a Persona"
                            FontAttributes="Bold"
@@ -57,20 +56,20 @@
                 <StackLayout Grid.Row="2"
                              Grid.Column="1">
                     <Label Text="In order to best display the algorithms there are some existing personas to choose from"
-                           TextColor="White"
-                           FontFamily="{StaticResource QuicksandMedium}"
+                           TextColor="Black"
+                           FontFamily="{StaticResource MontserratRegular}"
                            FontSize="Small"
                            Margin="15"></Label>
                     <Label Text="First select an existing persona or choose to create your own"
-                           TextColor="White"
-                           FontFamily="{StaticResource QuicksandMedium}"
+                           TextColor="Black"
+                           FontFamily="{StaticResource MontserratRegular}"
                            FontSize="Medium"
                            FontAttributes="Bold"
                            Margin="15"></Label>
                     <Button
                         FontAttributes="Bold"
                         Style="{StaticResource Accent2ColorButtonStyle}"
-                        Text="next" 
+                        Text="Next" 
                         Clicked="Redirect"/>
 
                 </StackLayout>

@@ -24,6 +24,9 @@
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
     <!-- Add Transparent for Status bar -->
     <item name="android:windowTranslucentStatus">true</item>
+    
+    <!--Set text button in lower case-->
+    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
