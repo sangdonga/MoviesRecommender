@@ -10,7 +10,7 @@ database = 'MOVIES'
 username = 'admin-sang'
 password = 'Robert_251298'
 driver = '{ODBC Driver 13 for SQL Server}'
-api_key = 'B47D6998EBC4D8997CC9EC480E7E08C6'
+api_key = '7522361783880296199857B4E34CB3E4'
 
 # Obtain the API key from the tmdb website listed in the prerequisites
 tmdb_key = 'd1ddc0e2dbd32aba1cf4cc30bdb8bb43'
