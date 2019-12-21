@@ -70,6 +70,15 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must like movies before you can request recommendations.
+        /// </summary>
+        internal static string LikeMoviesBeforeRecsWarningMessage {
+            get {
+                return ResourceManager.GetString("LikeMoviesBeforeRecsWarningMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not connect to internet. Check your connectivity..
         /// </summary>
         internal static string NoInternetMessage {
@@ -88,7 +97,7 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://app-apis.azurewebsites.net/onboarding.
+        ///   Looks up a localized string similar to http://film-apis.azurewebsites.net/onboarding.
         /// </summary>
         internal static string OnboardingEndpoint {
             get {
@@ -97,7 +106,7 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://app-apis.azurewebsites.net/personas.
+        ///   Looks up a localized string similar to http://film-apis.azurewebsites.net/personas.
         /// </summary>
         internal static string PersonasEndpoint {
             get {
@@ -106,7 +115,7 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://app-apis.azurewebsites.net/popular-movies.
+        ///   Looks up a localized string similar to http://film-apis.azurewebsites.net/popular-movies.
         /// </summary>
         internal static string PopularEndpoint {
             get {
@@ -115,7 +124,7 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://app-apis.azurewebsites.net/recommendations.
+        ///   Looks up a localized string similar to http://film-apis.azurewebsites.net/recommendations.
         /// </summary>
         internal static string RecommendationEndpoint {
             get {
@@ -133,7 +142,7 @@ namespace Recommender.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://app-apis.azurewebsites.net/search.
+        ///   Looks up a localized string similar to http://film-apis.azurewebsites.net/search.
         /// </summary>
         internal static string SearchEndpoint {
             get {

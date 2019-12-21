@@ -8,30 +8,30 @@
              x:Class="Recommender.App">
     <Application.Resources>
         <ResourceDictionary>
-            <OnPlatform x:Key="MontserratBold" x:TypeArguments="x:String">
-                <On Platform="Android">Montserrat-Bold.ttf#Montserrat-Bold</On>
-            </OnPlatform>
-            
-            <OnPlatform x:Key="MontserratSemiBold" x:TypeArguments="x:String">
-                <On Platform="Android">Montserrat-SemiBold.ttf#Montserrat-SemiBold</On>
-            </OnPlatform>
-            
-            <OnPlatform x:Key="MontserratMedium" x:TypeArguments="x:String">
-                <On Platform="Android">Montserrat-Medium.ttf#Montserrat-Medium</On>
+            <OnPlatform x:Key="GilroySemibold" x:TypeArguments="x:String">
+                <On Platform="Android">Gilroy-Semibold.ttf#Gilroy-Semibold</On>
             </OnPlatform>
 
-            <OnPlatform x:Key="MontserratRegular" x:TypeArguments="x:String">
-                <On Platform="Android">Montserrat-Regular.ttf#Montserrat-Regular</On>
+            <OnPlatform x:Key="GilroyMedium" x:TypeArguments="x:String">
+                <On Platform="Android">Gilroy-Medium.ttf#Gilroy-Medium</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="GilroyRegular" x:TypeArguments="x:String">
+                <On Platform="Android">Gilroy-Regular.ttf#Gilroy-Regular</On>
+            </OnPlatform>
+            
+            <OnPlatform x:Key="RobotoRegular" x:TypeArguments="x:String">
+                <On Platform="Android">Roboto-Regular.ttf#Roboto-Regular</On>
             </OnPlatform>
 
             <!--Font Style-->
-            <Style x:Key="MontserratRegularRegularFontStyle" TargetType="Label">
-                <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}"/>
+            <Style x:Key="GilroyRegularFontStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource GilroyRegular}"/>
                 <Setter Property="FontSize" Value="Medium"/>
             </Style>
 
-            <Style x:Key="MontserratRegularRegularSmallFontStyle" 
-                   BasedOn="{StaticResource MontserratRegularRegularFontStyle}"
+            <Style x:Key="GilroyRegularSmallFontStyle" 
+                   BasedOn="{StaticResource GilroyRegularFontStyle}"
                    TargetType="Label">
                 <Setter Property="FontSize" Value="Small"/>
             </Style>
@@ -68,7 +68,7 @@
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontSize" Value="20" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontFamily" Value="{StaticResource MontserratSemiBold}" />
+                <Setter Property="FontFamily" Value="{StaticResource GilroyMedium}" />
             </Style>
 
              <!--Movie Card Styles-->
@@ -77,14 +77,14 @@
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="Margin" Value="0" />
-                <Setter Property="FontFamily" Value="{StaticResource MontserratSemiBold}" />
+                <Setter Property="FontFamily" Value="{StaticResource GilroyMedium}" />
             </Style>
 
             <Style x:Key="MovieCardYear" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontSize" Value="12" />
                 <Setter Property="Margin" Value="0" />
-                <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+                <Setter Property="FontFamily" Value="{StaticResource GilroyRegular}" />
             </Style>
 
             <Style x:Key="MovieCardFrame" TargetType="Frame">
@@ -109,11 +109,11 @@
 
             <Style x:Key="DefaultButtonStyle" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="White" />
-                <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
-                <Setter Property="FontSize" Value="Medium" />
-                <Setter Property="Padding">
+                <Setter Property="FontFamily" Value="{StaticResource GilroyRegular}" />
+                <Setter Property="FontSize" Value="Large" />
+                <!--<Setter Property="Padding">
                     <Thickness Left="{StaticResource Default2Margin}" Right="{StaticResource Default2Margin}" />
-                </Setter>
+                </Setter>-->
                 <Setter Property="TextColor" Value="{StaticResource ButtonAccentColor}" />
             </Style>
             <Style x:Key="AccentColorButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}" TargetType="Button">
@@ -150,7 +150,7 @@
                 <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="Margin" Value="35,0,20,40" />
                 <Setter Property="FontSize" Value="Medium" />
-                <Setter Property="FontFamily" Value="{StaticResource MontserratMedium}" />
+                <Setter Property="FontFamily" Value="{StaticResource GilroyMedium}" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

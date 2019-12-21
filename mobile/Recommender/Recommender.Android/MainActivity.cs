@@ -7,6 +7,10 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using FFImageLoading.Forms.Platform;
+using Refractored.XamForms.PullToRefresh.Droid;
+using Lottie.Forms.Droid;
+
 namespace Recommender.Droid
 {
     [Activity(Label = "Recommender", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -21,6 +25,11 @@ namespace Recommender.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CachedImageRenderer.Init(enableFastRenderer: true);
+            CachedImageRenderer.InitImageViewHandler();
+            PullToRefreshLayoutRenderer.Init();
+            AnimationViewRenderer.Init();
+            LoadApplication(new App());
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

@@ -46,7 +46,7 @@
                            HorizontalOptions="Start"
                            Margin="0,0,0,25" />
 
-                    <Label FontFamily="{StaticResource MontserratSemiBold}"
+                    <Label FontFamily="{StaticResource GilroyMedium}"
                            FontSize="Large"
                            Text="Let's Select a Persona"
                            FontAttributes="Bold"
@@ -57,12 +57,12 @@
                              Grid.Column="1">
                     <Label Text="In order to best display the algorithms there are some existing personas to choose from"
                            TextColor="Black"
-                           FontFamily="{StaticResource MontserratRegular}"
+                           FontFamily="{StaticResource GilroyRegular}"
                            FontSize="Small"
                            Margin="15"></Label>
                     <Label Text="First select an existing persona or choose to create your own"
                            TextColor="Black"
-                           FontFamily="{StaticResource MontserratRegular}"
+                           FontFamily="{StaticResource GilroyRegular}"
                            FontSize="Medium"
                            FontAttributes="Bold"
                            Margin="15"></Label>

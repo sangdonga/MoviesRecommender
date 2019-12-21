@@ -65,10 +65,11 @@
     <AndroidAsset Include="Assets\zap_loading.json" />
     <AndroidAsset Include="Assets\MovieSelect.json" />
     <AndroidAsset Include="Assets\PersonaSelect.json" />
-    <AndroidAsset Include="Assets\Montserrat-Bold.ttf" />
-    <AndroidAsset Include="Assets\Montserrat-Medium.ttf" />
-    <AndroidAsset Include="Assets\Montserrat-Regular.ttf" />
-    <AndroidAsset Include="Assets\Montserrat-SemiBold.ttf" />
+    <AndroidAsset Include="Assets\arrow.json" />
+    <AndroidAsset Include="Assets\Gilroy-Semibold.ttf" />
+    <AndroidAsset Include="Assets\Gilroy-Medium.ttf" />
+    <AndroidAsset Include="Assets\Gilroy-Regular.ttf" />
+    <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -148,6 +149,33 @@
   <ItemGroup>
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\settings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\before_liked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\before_liked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\before_liked.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\after_liked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\after_liked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\after_liked.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

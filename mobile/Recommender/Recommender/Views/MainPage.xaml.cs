@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace Recommender.Views
@@ -18,26 +19,28 @@ namespace Recommender.Views
         {
             InitializeComponent();
             InitTabbedPage();
-            On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+            On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
+                .SetIsSmoothScrollEnabled(true)
+                .SetIsSwipePagingEnabled(true)
+                .SetOffscreenPageLimit(3);
         }
 
         public void InitTabbedPage()
         {
             NavigationPage browsepage, searchpage, favoritespage;
-
             browsepage = new NavigationPage(new BrowsePage())
             {
                 IconImageSource = "home.xml",
                 Title = "Home"
             };
 
-            searchpage = new NavigationPage(new BrowsePage())
+            searchpage = new NavigationPage(new SearchPage())
             {
                 IconImageSource = "search.xml",
                 Title = "Search"
             };
 
-            favoritespage = new NavigationPage(new BrowsePage())
+            favoritespage = new NavigationPage(new FavoritesPage())
             {
                 IconImageSource = "favorite.xml",
                 Title = "Favorites"

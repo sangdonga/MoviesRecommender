@@ -32,7 +32,7 @@ namespace Recommender.Views
         {
             if (viewModel.chosenPersona != null)
             {
-                //preferences.AddMultiplePreferences((List<Movie>)viewModel.chosenPersona.getLikedMovies());
+                preferences.AddMultiplePreferences((List<Movie>)viewModel.chosenPersona.getLikedMovies());
                 await Navigation.PushModalAsync(new MainPage()).ConfigureAwait(false);
             }
         }

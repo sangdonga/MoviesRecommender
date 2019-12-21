@@ -43,13 +43,13 @@
                                 Grid.Column="1">
                     <Label Text="Welcome to Reel"
                             TextColor="Black"
-                            FontFamily="{StaticResource MontserratRegular}"
+                            FontFamily="{StaticResource GilroyRegular}"
                             FontSize="Medium"
                             HorizontalTextAlignment="Center"
                             Margin="10"></Label>
                     <Label Text="Click begin to start a new session"
                             TextColor="Black"
-                            FontFamily="{StaticResource MontserratRegular}"
+                            FontFamily="{StaticResource GilroyRegular}"
                             HorizontalTextAlignment="Center"
                             FontSize="Small"
                             Margin="10"></Label>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
+using Recommender.Properties;
+
 namespace Recommender.Models
 {
     public class Movie : IComparable
@@ -28,11 +30,124 @@ namespace Recommender.Models
         [JsonProperty("prediction")]
         public string Prediction { get; set; }
 
-        public int CompareTo(object obj)
+        public override bool Equals(object obj)
         {
-            throw new NotImplementedException();
+            var item = obj as Movie;
+            if (item == null)
+            {
+                return false;
+            }
+
+            return this.ItemID.Equals(item.ItemID, StringComparison.Ordinal);
         }
 
+        public override int GetHashCode()
+        {
+            return this.ItemID.GetHashCode();
+        }
 
+        public int CompareTo(object obj)
+        {
+            if (obj == null)
+            {
+                return 1;
+            }
+
+            Movie otherMovie = obj as Movie;
+            if (otherMovie != null)
+            {
+                return String.Compare(this.ItemID, otherMovie.ItemID, StringComparison.Ordinal);
+            }
+            else
+            {
+                throw new ArgumentException(Resources.NotMovieObjectErrorMessage);
+            }
+        }
+
+        public static bool operator ==(Movie first, Movie second)
+        {
+            if (object.ReferenceEquals(first, null))
+            {
+                return object.ReferenceEquals(second, null);
+            }
+            return first.Equals(second);
+        }
+
+        public static bool operator !=(Movie first, Movie second)
+        {
+            if (object.ReferenceEquals(first, null))
+            {
+                return !object.ReferenceEquals(second, null);
+            }
+            return !first.Equals(second);
+        }
+
+        public static bool operator <(Movie first, Movie second)
+        {
+            if (first == null || second == null)
+            {
+                return false;
+            }
+            int comparison = first.CompareTo(second);
+            if (comparison > -1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static bool operator >(Movie first, Movie second)
+        {
+            if (first == null)
+            {
+                return false;
+            }
+            int comparison = first.CompareTo(second);
+            if (comparison < 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static bool operator >=(Movie first, Movie second)
+        {
+            if (first == null)
+            {
+                return false;
+            }
+            int comparison = first.CompareTo(second);
+            if (comparison == -1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static bool operator <=(Movie first, Movie second)
+        {
+            if (first == null)
+            {
+                return false;
+            }
+            int comparison = first.CompareTo(second);
+            if (comparison == 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

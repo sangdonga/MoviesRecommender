@@ -56,7 +56,7 @@ namespace Recommender.Models
         {
             var eventArgs = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, movieList);
             movies.UnionWith(movieList);
-            CollectionChanged.Invoke(this, eventArgs);
+            //CollectionChanged.Invoke(this, eventArgs);
         }
 
         // Movie that user would like to have removed from their preferences.

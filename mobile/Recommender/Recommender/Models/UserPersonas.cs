@@ -23,29 +23,21 @@ namespace Recommender.Models
             pairedPersonas = new ObservableCollection<PersonaContainer>();
         }
 
-        /// <summary>
-        /// Gets singleton object
-        /// </summary>
-        /// <returns> Returns singleton UserPersonas object </returns>
+        
+        // Gets singleton object
         public static UserPersonas GetInstance()
         {
             return obj;
         }
 
-        /// <summary>
-        /// Gets current list of all personas
-        /// </summary>
-        /// <returns> Returns a list of the users's personas </returns>
+        // Gets current list of all personas
         public List<PersonaWrapper> GetAllPersonas()
         {
             return personas;
         }
 
-        /// <summary>
-        /// Calls rest client to grab the personas and converts the returned dictionary into the list of persons while setting
-        /// it to the class variable personas
-        /// </summary>
-        /// <return>None</return>
+        // Calls rest client to grab the personas and converts the returned dictionary into the list of persons while setting
+        // it to the class variable personas
         public async Task PopulatePersonasFromBackend()
         {
             // grab the personas dictionary
