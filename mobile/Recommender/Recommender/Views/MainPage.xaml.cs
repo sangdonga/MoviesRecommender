@@ -21,8 +21,7 @@ namespace Recommender.Views
             InitTabbedPage();
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
                 .SetIsSmoothScrollEnabled(true)
-                .SetIsSwipePagingEnabled(true)
-                .SetOffscreenPageLimit(3);
+                .SetIsSwipePagingEnabled(true);
         }
 
         public void InitTabbedPage()

@@ -132,8 +132,8 @@
             <Style x:Key="FastImageStyle" TargetType="ffimageloading:CachedImage">
                 <Setter Property="Aspect">AspectFill</Setter>
                 <Setter Property="HeightRequest">180</Setter>
-                <Setter Property="ErrorPlaceholder">default_image.png</Setter>
-                <Setter Property="LoadingPlaceholder">default_image.png</Setter>
+                <Setter Property="ErrorPlaceholder">default_image.jpg</Setter>
+                <Setter Property="LoadingPlaceholder">default_image.jpg</Setter>
                 <Setter Property="DownsampleToViewSize">True</Setter>
             </Style>
 

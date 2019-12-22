@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Recommender.Views.PersonasPage">
+             x:Class="Recommender.Views.PersonasPage"
+             BackgroundImageSource="final_background.png">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Start"
                  HorizontalOptions="Center">
