@@ -71,6 +71,8 @@
     <AndroidAsset Include="Assets\Gilroy-Medium.ttf" />
     <AndroidAsset Include="Assets\Gilroy-Regular.ttf" />
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
+    <AndroidAsset Include="Assets\scroll_arrows.json" />
+    <AndroidAsset Include="Assets\down_arrows.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -93,9 +95,6 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_person_pin_circle_black_48dp.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Recommender\Recommender.csproj">
@@ -144,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-xhdpi\" />
-    <Folder Include="Resources\drawable-xxhdpi\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\settings.png" />
@@ -156,13 +154,16 @@
     <AndroidResource Include="Resources\drawable\settings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\before_liked.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\background.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\before_liked.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\final_background.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\before_liked.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\default_image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\splash.gif" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\after_liked.png" />
@@ -174,16 +175,28 @@
     <AndroidResource Include="Resources\drawable\after_liked.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\background.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\before_liked.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\final_background.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\before_liked.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\default_image.jpg" />
+    <AndroidResource Include="Resources\drawable\before_liked.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\splash_background.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\avatar_default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\create_new_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\create_new_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\create_new_user_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\create_new_user_white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

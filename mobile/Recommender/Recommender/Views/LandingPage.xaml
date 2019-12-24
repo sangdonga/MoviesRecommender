@@ -8,59 +8,82 @@
              x:Class="Recommender.Views.LandingPage"
              BackgroundImageSource="final_background.png">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid>
-                <Grid.Padding>
-                    <Thickness
-                        Left="{StaticResource Default2Margin}"
-                        Right="{StaticResource Default2Margin}" />
-                </Grid.Padding>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Frame BackgroundColor="Transparent" 
+                   HeightRequest="250"
+                   Margin="5,0,5,0"
+                   CornerRadius="5"
+                   HasShadow="True"
+                   Padding="0,0,0,0">
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
+                        <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Start" Margin="0,-40,0,0">
+                            <forms:AnimationView
+                                AutomationProperties.IsInAccessibleTree="True"
+                                Animation="zap_loading.json"
+                                AutoPlay="True"
+                                Loop="true"
+                                VerticalOptions="Start"
+                                HorizontalOptions="FillAndExpand"
+                                HeightRequest="250"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand"
+                                Grid.Row="1"
+                                Grid.Column="1">
+                            <Label Text="Welcome to MoRe"
+                                   TextColor="#3d3d3d"
+                                   FontFamily="{StaticResource GilroyRegular}"
+                                   FontSize="Medium"
+                                   HorizontalTextAlignment="Center"
+                                   Margin="10">
+                            </Label>
+                            <Label Text="Click begin to start a new session"
+                                   TextColor="#3d3d3d"
+                                   FontFamily="{StaticResource GilroyRegular}"
+                                   HorizontalTextAlignment="Center"
+                                   FontSize="Small"
+                                   Margin="10">
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Grid Margin="10,5,10,5">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*" />
-                    <RowDefinition Height="3*" />
-                    <RowDefinition Height="6*" />
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="8*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-
-                <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="End">
-                    <!--<Image Source="logo.xml" Margin="0,0,0,50" WidthRequest="500"/>-->
-                    <forms:AnimationView
-                        AutomationProperties.IsInAccessibleTree="True"
-                        Animation="zap_loading.json"
-                        AutoPlay="True"
-                        Loop="true"
-                        VerticalOptions="FillAndExpand"
-                        HorizontalOptions="FillAndExpand"
-                        HeightRequest="250"
-                        Margin="0,0,0,0"/>
-                </StackLayout>
-                <StackLayout HorizontalOptions="CenterAndExpand"
-                                Grid.Row="2"
-                                Grid.Column="1">
-                    <Label Text="Welcome to Reel"
-                            TextColor="Black"
-                            FontFamily="{StaticResource GilroyRegular}"
-                            FontSize="Medium"
-                            HorizontalTextAlignment="Center"
-                            Margin="10"></Label>
-                    <Label Text="Click begin to start a new session"
-                            TextColor="Black"
-                            FontFamily="{StaticResource GilroyRegular}"
-                            HorizontalTextAlignment="Center"
-                            FontSize="Small"
-                            Margin="10"></Label>
-                    <Button
-                        Style="{StaticResource Accent2ColorButtonStyle}"
+                <Button Style="{StaticResource Accent2ColorButtonStyle}"
+                        Grid.Row="0"
+                        Grid.Column="2"
                         FontAttributes="Bold"
                         Text="Begin"
-                        Margin="0,30,0,0"
-                        Clicked="Redirect"/>
-                </StackLayout>
+                        Clicked="Redirect"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20,0,0,0"/>
+                <Button Style="{StaticResource Accent2ColorButtonStyle}"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        Text="Exit"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0,0,20,0"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

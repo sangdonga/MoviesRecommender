@@ -7,7 +7,7 @@
              x:Class="Recommender.Views.PersonasPage"
              BackgroundImageSource="final_background.png">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Start"
+        <StackLayout VerticalOptions="End"
                  HorizontalOptions="Center">
         <!--<Grid>
             <Grid.RowDefinitions>
@@ -32,21 +32,23 @@
         <StackLayout
             x:Name="PersonasStackLayout"
             HorizontalOptions="Center"
-            VerticalOptions="CenterAndExpand"
+            VerticalOptions="Center"
             BindableLayout.ItemsSource="{Binding Path=PairedPersonas}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <!-- Create the row -->
                     <StackLayout Orientation="Horizontal"
-                                 HorizontalOptions="Center">
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="CenterAndExpand"
+                                 HeightRequest="250">
                         <Frame AutomationProperties.IsInAccessibleTree="true"
                                AutomationProperties.Name="First Row of Personas Frame"
-                               HasShadow="False"
-                               BackgroundColor="{StaticResource BackgroundColor}">
+                               HasShadow="True"
+                               BackgroundColor="Transparent">
                             <!-- Create the first element in that row -->
                             <StackLayout Orientation="Vertical"
                                          HorizontalOptions="Center"
-                                         BackgroundColor="{StaticResource BackgroundColor}">
+                                         BackgroundColor="Transparent">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="50" />
@@ -56,20 +58,24 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="50" />
                                     </Grid.ColumnDefinitions>
-
-                                    <ImageButton AutomationProperties.IsInAccessibleTree="true"
-                                                 AutomationProperties.Name="{Binding FirstPersona.Name}"
-                                                 Source="{Binding FirstPersona.IconSource}"
-                                                 BackgroundColor="Transparent"
-                                                 Clicked="SetChosenPersona"
-                                                 Grid.Row="0"
-                                                 Grid.Column="0"
-                                                 Grid.RowSpan="2"
-                                                 Grid.ColumnSpan="2"
-                                                 CommandParameter="{Binding FirstPersona.Name}" />
-
-                                    <ImageButton
-                                        AutomationProperties.IsInAccessibleTree="true"
+                                        <Frame BackgroundColor="Transparent"
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           Grid.RowSpan="2"
+                                           Grid.ColumnSpan="2"
+                                           Padding="0"
+                                           CornerRadius="100"
+                                           IsClippedToBounds="True"
+                                           BorderColor="Gray"
+                                           HasShadow="True">
+                                            <ImageButton AutomationProperties.IsInAccessibleTree="true"
+                                                AutomationProperties.Name="{Binding FirstPersona.Name}"
+                                                Source="{Binding FirstPersona.IconSource}"
+                                                BackgroundColor="Transparent"
+                                                Clicked="SetChosenPersona"
+                                                CommandParameter="{Binding FirstPersona.Name}" />
+                                        </Frame>
+                                        <ImageButton AutomationProperties.IsInAccessibleTree="true"
                                         AutomationProperties.Name="Check Mark"
                                         Grid.Row="0"
                                         Grid.Column="1"
@@ -78,8 +84,7 @@
                                         BackgroundColor="Transparent"
                                         VerticalOptions="Start"
                                         IsVisible="{Binding FirstPersonaWrapper.ShowCheckmark}" />
-
-                                </Grid>
+                                    </Grid>
                                 <StackLayout HorizontalOptions="Center">
                                     <Label Text="{Binding FirstPersona.Name}"
                                            Style="{StaticResource MovieCardTitle}" />
@@ -89,11 +94,11 @@
                         <Frame AutomationProperties.IsInAccessibleTree="true"
                                AutomationProperties.Name="Second Row of Personas Frame"
                                HasShadow="False"
-                               BackgroundColor="{StaticResource BackgroundColor}">
+                               BackgroundColor="Transparent">
                             <!-- Create the second element in that row -->
                             <StackLayout Orientation="Vertical"
                                          HorizontalOptions="Center"
-                                         BackgroundColor="{StaticResource BackgroundColor}">
+                                         BackgroundColor="Transparent">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="50" />
@@ -103,16 +108,24 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="50" />
                                     </Grid.ColumnDefinitions>
-                                    <ImageButton AutomationProperties.IsInAccessibleTree="true"
+                                    <Frame BackgroundColor="Transparent"
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           Grid.RowSpan="2"
+                                           Grid.ColumnSpan="2"
+                                           Padding="0"
+                                           CornerRadius="100"
+                                           IsClippedToBounds="True"
+                                           BorderColor="Gray"
+                                           HasShadow="True">
+                                            
+                                        <ImageButton AutomationProperties.IsInAccessibleTree="true"
                                                  AutomationProperties.Name="{Binding SecondPersona.Name}"
                                                  Source="{Binding SecondPersona.IconSource}"
                                                  BackgroundColor="Transparent"
                                                  Clicked="SetChosenPersona"
-                                                 Grid.Row="0"
-                                                 Grid.Column="0"
-                                                 Grid.RowSpan="2"
-                                                 Grid.ColumnSpan="2"
                                                  CommandParameter="{Binding SecondPersona.Name}" />
+                                    </Frame>
 
                                     <ImageButton
                                         AutomationProperties.IsInAccessibleTree="true"
@@ -138,32 +151,30 @@
             <!-- Create your own persona & next button -->
         </StackLayout>
 
-        <StackLayout Orientation="Vertical">
-            <!--<StackLayout Orientation="Horizontal"
-                         HorizontalOptions="CenterAndExpand"
-                         VerticalOptions="Center"
-                         Margin="20">
-                <ImageButton BackgroundColor="Transparent"
-                             AutomationProperties.IsInAccessibleTree="true"
-                             AutomationProperties.Name="Create Your Own Persona"
-                             Source="create_your_own.png"
-                             HeightRequest="40"
-                             Margin="0,3,5,0"
-                             Clicked="RedirectToCustomPage" />
-            </StackLayout>-->
+        <Grid Margin="10,150,10,10">
+            <ImageButton BackgroundColor="Blue"
+                         AutomationProperties.IsInAccessibleTree="true"
+                         AutomationProperties.Name="Create Your Own Persona"
+                         Source="create_new_user_white.png"
+                         HeightRequest="35"
+                         Margin="0,0,0,0"
+                         CornerRadius="20"
+                         Grid.Column="0"
+                         Clicked="RedirectToCustomPage" 
+                         Padding="0"/>
             <Button
                 x:Name="NextButton"
-                Margin="30,0,30,30"
                 AutomationProperties.IsInAccessibleTree="true"
                 AutomationProperties.Name="Proceed with Selected Persona"
                 Style="{StaticResource Accent2ColorButtonStyle}"
                 BackgroundColor="{Binding NextButtonBackgroundColor}"
                 BorderColor="{Binding ButtonBorder}"
-                BorderWidth="3"
+                BorderWidth="2"
                 Text="Next"
                 FontAttributes="Bold"
+                Grid.Column="3"
                 Clicked="RedirectToMainPage" />
-        </StackLayout>
+        </Grid>
     </StackLayout>
     </ContentPage.Content>
 </ContentPage>

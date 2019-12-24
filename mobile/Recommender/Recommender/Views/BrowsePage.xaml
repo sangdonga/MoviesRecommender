@@ -27,8 +27,8 @@
             <StackLayout Padding="20,35,20,20"
                          Spacing="10">
                 <Label IsVisible="{x:OnPlatform Android=true}"
-                       TextColor="White"
-                       FontFamily="{StaticResource GilroyRegularFontStyle}"
+                       TextColor="DimGray"
+                       FontFamily="{StaticResource GilroyRegular}"
                        HorizontalOptions="Center"
                        Text="pull down to refresh"
                        FontSize="Small"></Label>
@@ -36,19 +36,12 @@
                     IsVisible="{x:OnPlatform Android=true}"
                     HeightRequest="30"
                     x:Name="LottieAnimation"
-                    Animation="arrow.json"
+                    Animation="down_arrows.json"
                     AutoPlay="True"
                     Loop="true"
                     VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand" />
-                <Button AutomationProperties.IsInAccessibleTree="true"
-                        AutomationProperties.Name="Request Recommendations"
-                        Text="Request Recommendations"
-                        VerticalOptions="Start"
-                        Command="{Binding OnPullDownRefresh}"
-                        Style="{StaticResource MovieCardBackgroundColor}"
-                        TextColor="White"
-                        IsVisible="{x:OnPlatform Android=false}" />
+                <!-- Horizontal scrolling list of Recommend movies -->
                 <Label x:Name="RecommendationsLabel"
                        IsVisible="{Binding ShowRecommendationsLabel}"
                        Style="{StaticResource ItemPageLabel}">RECOMMENDED FOR YOU</Label>
@@ -111,7 +104,7 @@
                                                      Source="{Binding MovieLikeButtonImageSource}"
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
-                                                     WidthRequest="50"
+                                                     WidthRequest="30"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -182,7 +175,7 @@
                                                      Source="{Binding MovieLikeButtonImageSource}"
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
-                                                     WidthRequest="50"
+                                                     WidthRequest="30"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -253,7 +246,7 @@
                                                      Source="{Binding MovieLikeButtonImageSource}"
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
-                                                     WidthRequest="50"
+                                                     WidthRequest="30"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -325,7 +318,7 @@
                                                      Source="{Binding MovieLikeButtonImageSource}"
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
-                                                     WidthRequest="50"
+                                                     WidthRequest="30"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -397,7 +390,7 @@
                                                      Source="{Binding MovieLikeButtonImageSource}"
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
-                                                     WidthRequest="50"
+                                                     WidthRequest="30"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -469,7 +462,7 @@
                                                      Source="{Binding MovieLikeButtonImageSource}"
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
-                                                     WidthRequest="50"
+                                                     WidthRequest="30"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -540,7 +533,7 @@
                                                      Source="{Binding MovieLikeButtonImageSource}"
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
-                                                     WidthRequest="50"
+                                                     WidthRequest="30"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>

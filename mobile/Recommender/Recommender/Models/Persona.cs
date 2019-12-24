@@ -20,10 +20,10 @@ namespace Recommender.Models
             Contract.Requires(name != null);
             this.likedMovies = likedMovies;
             this.Name = name;
-            if(name.Equals("Rom Com Tom", StringComparison.Ordinal)) { IconSource = "Tom.png"; }
-            if(name.Equals("Cartoon Carly", StringComparison.Ordinal))    { IconSource = "Carly.png"; }
-            if(name.Equals("Action Jackson", StringComparison.Ordinal))   { IconSource = "Jackson.png"; }
-            if(name.Equals("Joking Jane", StringComparison.Ordinal))      { IconSource = "Jane.png"; }
+            if(name.Equals("Rom Com Tom", StringComparison.Ordinal)) { IconSource = "avatar_default.jpg"; }
+            if(name.Equals("Cartoon Carly", StringComparison.Ordinal))    { IconSource = "avatar_default.jpg"; }
+            if(name.Equals("Action Jackson", StringComparison.Ordinal))   { IconSource = "avatar_default.jpg"; }
+            if(name.Equals("Joking Jane", StringComparison.Ordinal))      { IconSource = "avatar_default.jpg"; }
         }
 
         public IList<Movie> getLikedMovies()

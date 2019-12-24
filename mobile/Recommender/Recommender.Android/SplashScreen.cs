@@ -14,7 +14,8 @@ using Lottie.Forms.Droid;
 
 namespace Recommender.Droid
 {
-    [Activity(Theme = "@style/Theme.Splash",
+    [Activity(Label = "MoRe", 
+        Theme = "@style/Theme.Splash",
         MainLauncher = true,
         NoHistory = true)]
     public class SplashScreen : Activity
