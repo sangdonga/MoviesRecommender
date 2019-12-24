@@ -4,12 +4,212 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Recommender.Views.SearchPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Search Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Recommender.Views.SearchPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="background_tabbed.png">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Icon="settings.png"
+                     Text="Settings"
+                     Clicked="ViewSettingsButtonClicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>-->
+    <Frame Margin="0,50,0,-50"
+           BackgroundColor="AliceBlue"
+           CornerRadius="30"
+           Padding="0,5,0,0"
+           HasShadow="True">
+    <StackLayout Padding="10,10,10,10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Frame Padding="0"
+                   CornerRadius="10"
+                   BackgroundColor="#d5d9e5"
+                   Opacity="0.35"
+                   Margin="7,0,7,0">
+                <SearchBar x:Name="userMovieQuery_entry"
+                           Placeholder="Search..."
+                           AutomationProperties.IsInAccessibleTree="true"
+                           AutomationProperties.Name="Search for Movies"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           TextColor="Black"
+                           SearchButtonPressed="OnSearchClick"
+                           PlaceholderColor="WhiteSmoke"
+                           BackgroundColor="#d5d9e5"
+                           CancelButtonColor="White"
+                           Opacity="0.8">
+                    <SearchBar.TextColor>
+                        <OnPlatform x:TypeArguments="Color"
+                                    Android="Black"/>
+                    </SearchBar.TextColor>
+                    <SearchBar.PlaceholderColor>
+                        <OnPlatform x:TypeArguments="Color"
+                                    Android="Gray"/>
+                    </SearchBar.PlaceholderColor>
+                </SearchBar>
+            </Frame>
+        </Grid>
+        <Label Text="No results were found."
+               FontFamily="{StaticResource GilroyRegular}"
+               TextColor="DarkGray"
+               FontSize="Medium"
+               IsVisible="{Binding NoResultsMessage}"></Label>
+
+        <ScrollView>
+            <StackLayout
+                x:Name="SearchResultsStackLayout"
+                BindableLayout.ItemsSource="{Binding Path=PairedMovieList}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="0"
+                                     Orientation="Vertical"
+                                     VerticalOptions="Center">
+                            <StackLayout Orientation="Horizontal"
+                                         HorizontalOptions="CenterAndExpand"
+                                         Padding="0">
+                                <Frame IsVisible="{Binding DisplayFirstMovie}"
+                                       Margin="0"
+                                       BackgroundColor="Transparent"
+                                       Padding="0"
+                                       WidthRequest="200">
+                                    <StackLayout x:Name="Movie1StackLayout"
+                                                 Orientation="Vertical"
+                                                 Padding="0"
+                                                 Margin="0">
+                                        <Grid Padding="0"
+                                              Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="50" />
+                                            </Grid.ColumnDefinitions>
+                                            <Frame Grid.Row="0"
+                                                   Grid.Column="0"
+                                                   Grid.RowSpan="2"
+                                                   Grid.ColumnSpan="2"
+                                                   Style="{StaticResource MovieCardFrame}">
+                                                <StackLayout BindingContext="{Binding Path=FirstMovie}"
+                                                             Orientation="Vertical"
+                                                             Padding="0"
+                                                             Margin="0"
+                                                             Style="{StaticResource MovieCardBackgroundColor}">
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnItemSelected" />
+                                                    </StackLayout.GestureRecognizers>
+                                                    <ffimageloading:CachedImage
+                                                        Style="{StaticResource FastImageStyle}"
+                                                        Source="{Binding Movie.ImageUrl}">
+                                                    </ffimageloading:CachedImage>
+                                                    <StackLayout Orientation="Vertical"
+                                                                 Style="{StaticResource MovieCardBackgroundColor}"
+                                                                 Margin="0,0,0,0"
+                                                                 Padding="0, 0, 0, 0"
+                                                                 WidthRequest="100"
+                                                                 HeightRequest="75">
+                                                        <Label Text="{Binding Movie.Title}"
+                                                               Style="{StaticResource MovieCardTitle}" 
+                                                               LineBreakMode="TailTruncation"
+                                                               MaxLines="3"/>
+                                                        <Label Text="{Binding Movie.Year}"
+                                                               Style="{StaticResource MovieCardYear}" />
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                            <ImageButton Grid.Row="0"
+                                                         Grid.Column="1"
+                                                         AutomationProperties.IsInAccessibleTree="true"
+                                                         AutomationProperties.Name="Like Icon"
+                                                         Source="{Binding FirstMovie.MovieLikeButtonImageSource}"
+                                                         CommandParameter="{Binding FirstMovie.Movie}"
+                                                         Command="{Binding FirstMovie.LikeClicked}"
+                                                         WidthRequest="50"
+                                                         Margin="0,8,8,0"
+                                                         BackgroundColor="Transparent" />
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+
+                                <Frame IsVisible="{Binding DisplaySecondMovie}"
+                                       BackgroundColor="Transparent"
+                                       Padding="0"
+                                       WidthRequest="200">
+                                    <StackLayout x:Name="Movie2StackLayout"
+                                                 Orientation="Vertical"
+                                                 Padding="0"
+                                                 Margin="0"
+                                                 BackgroundColor="Transparent">
+                                        <Grid Padding="0"
+                                              Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="50" />
+                                            </Grid.ColumnDefinitions>
+                                            <Frame Grid.Row="0"
+                                                   Grid.Column="0"
+                                                   Grid.RowSpan="2"
+                                                   Grid.ColumnSpan="2"
+                                                   Style="{StaticResource MovieCardFrame}">
+                                                <StackLayout BindingContext="{Binding Path=SecondMovie}"
+                                                             Orientation="Vertical"
+                                                             Padding="0"
+                                                             Margin="0"
+                                                             Style="{StaticResource MovieCardBackgroundColor}">
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnItemSelected" />
+                                                    </StackLayout.GestureRecognizers>
+                                                    <ffimageloading:CachedImage
+                                                        Style="{StaticResource FastImageStyle}"
+                                                        Source="{Binding Movie.ImageUrl}">
+                                                    </ffimageloading:CachedImage>
+                                                    <StackLayout Orientation="Vertical"
+                                                                 Style="{StaticResource MovieCardBackgroundColor}"
+                                                                 Margin="5,0,0,0"
+                                                                 Padding="0, 0, 0, 0"
+                                                                 WidthRequest="100"
+                                                                 HeightRequest="75">
+                                                        <Label Text="{Binding Movie.Title}"
+                                                               Style="{StaticResource MovieCardTitle}" 
+                                                               LineBreakMode="TailTruncation"
+                                                               MaxLines="3"/>
+                                                        <Label Text="{Binding Movie.Year}"
+                                                               Style="{StaticResource MovieCardYear}" />
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                            <ImageButton Grid.Row="0"
+                                                         Grid.Column="1"
+                                                         AutomationProperties.IsInAccessibleTree="true"
+                                                         AutomationProperties.Name="Like Icon"
+                                                         Source="{Binding SecondMovie.MovieLikeButtonImageSource}"
+                                                         CommandParameter="{Binding SecondMovie.Movie}"
+                                                         Command="{Binding SecondMovie.LikeClicked}"
+                                                         WidthRequest="50"
+                                                         Margin="0,8,8,0"
+                                                         BackgroundColor="Transparent" />
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+    </Frame>
+
 </ContentPage>

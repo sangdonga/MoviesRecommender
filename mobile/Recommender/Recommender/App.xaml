@@ -48,9 +48,9 @@
 
              <!--Dark Blue/Purple Background Color--> 
             <!--<Color x:Key="BackgroundColor">#0F243C</Color>-->
-            <!--<Color x:Key="BackgroundColor">#E9EAEC</Color>-->
-            <Color x:Key="BackgroundColor">#e3e5f2</Color>
-
+            <Color x:Key="BackgroundColor">#E9EAEC</Color>
+            <Color x:Key="TabbedBackgroundColor">#FFFFFF</Color>
+    
             <Style TargetType="NavigationPage">
                 <Setter Property="BarTextColor" Value="White" />
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
@@ -63,7 +63,7 @@
 
              <!--This is for the side panels of the background that are not in the scope of the content page background--> 
             <Style TargetType="TabbedPage" x:Key="AppBackgroundColor">
-                <Setter Property="BackgroundColor" Value="#3369ff" />
+                <Setter Property="BackgroundColor" Value="White" />
             </Style>
 
             <Style x:Key="ItemPageLabel" TargetType="Label">

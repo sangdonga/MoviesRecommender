@@ -30,19 +30,25 @@ namespace Recommender.Views
             browsepage = new NavigationPage(new BrowsePage())
             {
                 IconImageSource = "home.xml",
-                Title = "Home"
+                Title = "Home",
+                BarBackgroundColor = Color.White,
+                BarTextColor = Color.Blue
             };
 
             searchpage = new NavigationPage(new SearchPage())
             {
                 IconImageSource = "search.xml",
-                Title = "Search"
+                Title = "Search",
+                BarBackgroundColor = Color.White,
+                BarTextColor = Color.Blue
             };
 
             favoritespage = new NavigationPage(new FavoritesPage())
             {
                 IconImageSource = "favorite.xml",
-                Title = "Favorites"
+                Title = "Favorites",
+                BarBackgroundColor = Color.White,
+                BarTextColor = Color.Blue
             };
 
             Children.Add(browsepage);

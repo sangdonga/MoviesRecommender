@@ -9,22 +9,30 @@
              xmlns:controls="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
              Title="Browse Movies"
              x:Class="Recommender.Views.BrowsePage"
-             x:Name="BrowseItemsPage">
+             x:Name="BrowseItemsPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="background_tabbed.png">
 
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Icon="settings.png"
                      Text="Settings">
         </ToolbarItem>
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 
-
+    <Frame Margin="0,50,0,-50"
+           BackgroundColor="AliceBlue"
+           CornerRadius="30"
+           Padding="0,10,0,0"
+           HasShadow="True">
+        
     <controls:PullToRefreshLayout
         IsPullToRefreshEnabled="True"
         RefreshCommand="{Binding OnPullDownRefresh}"
         IsRefreshing="{Binding IsRefreshing}"
         RefreshColor="Blue">
-        <ScrollView BackgroundColor="Transparent">
-            <StackLayout Padding="20,35,20,20"
+        <ScrollView BackgroundColor="Transparent"
+                    VerticalScrollBarVisibility="Never">
+            <StackLayout Padding="10,10,10,10"
                          Spacing="10">
                 <Label IsVisible="{x:OnPlatform Android=true}"
                        TextColor="DimGray"
@@ -34,7 +42,7 @@
                        FontSize="Small"></Label>
                 <forms:AnimationView
                     IsVisible="{x:OnPlatform Android=true}"
-                    HeightRequest="30"
+                    HeightRequest="50"
                     x:Name="LottieAnimation"
                     Animation="down_arrows.json"
                     AutoPlay="True"
@@ -72,7 +80,8 @@
                                                Grid.Column="0" 
                                                Grid.RowSpan="2" 
                                                Grid.ColumnSpan="2"
-                                               Style="{StaticResource MovieCardFrame}">
+                                               Style="{StaticResource MovieCardFrame}"
+                                               WidthRequest="180">
                                             <StackLayout Orientation="Vertical"
                                                          Padding="0"
                                                          Margin="0"
@@ -87,9 +96,11 @@
                                                 <StackLayout Orientation="Vertical" Style="{StaticResource MovieCardBackgroundColor}"
                                                              Margin="5,0,0,0" Padding="0, 0, 0, 0" 
                                                              WidthRequest="100" 
-                                                             HeightRequest="75">
+                                                             HeightRequest="70">
                                                     <Label Text="{Binding Movie.Title}"
-                                                           Style="{StaticResource MovieCardTitle}" />
+                                                           Style="{StaticResource MovieCardTitle}" 
+                                                           LineBreakMode="TailTruncation"
+                                                           MaxLines="3"/>
                                                     <Label Text="{Binding Movie.Year}"
                                                            Style="{StaticResource MovieCardYear}" />
                                                 </StackLayout>
@@ -105,7 +116,8 @@
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
                                                      WidthRequest="30"
-                                                     BackgroundColor="Transparent" />
+                                                     Margin="0,8,8,0"
+                                                     BackgroundColor="Transparent"/>
                                     </Grid>
                                 </StackLayout>
                             </DataTemplate>
@@ -142,7 +154,8 @@
                                                Grid.Column="0"
                                                Grid.RowSpan="2"
                                                Grid.ColumnSpan="2"
-                                               Style="{StaticResource MovieCardFrame}">
+                                               Style="{StaticResource MovieCardFrame}"
+                                               WidthRequest="180">
                                             <StackLayout Orientation="Vertical"
                                                          Padding="0"
                                                          Margin="0"
@@ -160,7 +173,9 @@
                                                              WidthRequest="100"
                                                              HeightRequest="75">
                                                     <Label Text="{Binding Movie.Title}"
-                                                           Style="{StaticResource MovieCardTitle}" />
+                                                           Style="{StaticResource MovieCardTitle}" 
+                                                           LineBreakMode="TailTruncation"
+                                                           MaxLines="3"/>
                                                     <Label Text="{Binding Movie.Year}"
                                                            Style="{StaticResource MovieCardYear}" />
                                                 </StackLayout>
@@ -176,6 +191,7 @@
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
                                                      WidthRequest="30"
+                                                     Margin="0,8,8,0"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -213,7 +229,8 @@
                                                Grid.Column="0"
                                                Grid.RowSpan="2"
                                                Grid.ColumnSpan="2"
-                                               Style="{StaticResource MovieCardFrame}">
+                                               Style="{StaticResource MovieCardFrame}"
+                                               WidthRequest="180">
                                             <StackLayout Orientation="Vertical"
                                                          Padding="0"
                                                          Margin="0"
@@ -231,7 +248,9 @@
                                                              WidthRequest="100"
                                                              HeightRequest="75">
                                                     <Label Text="{Binding Movie.Title}"
-                                                           Style="{StaticResource MovieCardTitle}" />
+                                                           Style="{StaticResource MovieCardTitle}" 
+                                                           LineBreakMode="TailTruncation"
+                                                           MaxLines="3"/>
                                                     <Label Text="{Binding Movie.Year}"
                                                            Style="{StaticResource MovieCardYear}" />
                                                 </StackLayout>
@@ -247,6 +266,7 @@
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
                                                      WidthRequest="30"
+                                                     Margin="0,8,8,0"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -284,7 +304,8 @@
                                                Grid.Column="0"
                                                Grid.RowSpan="2"
                                                Grid.ColumnSpan="2"
-                                               Style="{StaticResource MovieCardFrame}">
+                                               Style="{StaticResource MovieCardFrame}"
+                                               WidthRequest="180">
                                             <StackLayout Orientation="Vertical"
                                                          Padding="0"
                                                          Margin="0"
@@ -303,7 +324,9 @@
                                                              WidthRequest="100"
                                                              HeightRequest="75">
                                                     <Label Text="{Binding Movie.Title}"
-                                                           Style="{StaticResource MovieCardTitle}" />
+                                                           Style="{StaticResource MovieCardTitle}" 
+                                                           LineBreakMode="TailTruncation"
+                                                           MaxLines="3"/>
                                                     <Label Text="{Binding Movie.Year}"
                                                            Style="{StaticResource MovieCardYear}" />
                                                 </StackLayout>
@@ -319,6 +342,7 @@
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
                                                      WidthRequest="30"
+                                                     Margin="0,8,8,0"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -356,7 +380,8 @@
                                                Grid.Column="0"
                                                Grid.RowSpan="2"
                                                Grid.ColumnSpan="2"
-                                               Style="{StaticResource MovieCardFrame}">
+                                               Style="{StaticResource MovieCardFrame}"
+                                               WidthRequest="180">
                                             <StackLayout Orientation="Vertical"
                                                          Padding="0"
                                                          Margin="0"
@@ -375,7 +400,9 @@
                                                              WidthRequest="100"
                                                              HeightRequest="75">
                                                     <Label Text="{Binding Movie.Title}"
-                                                           Style="{StaticResource MovieCardTitle}" />
+                                                           Style="{StaticResource MovieCardTitle}" 
+                                                           LineBreakMode="TailTruncation"
+                                                           MaxLines="3"/>
                                                     <Label Text="{Binding Movie.Year}"
                                                            Style="{StaticResource MovieCardYear}" />
                                                 </StackLayout>
@@ -391,6 +418,7 @@
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
                                                      WidthRequest="30"
+                                                     Margin="0,8,8,0"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -428,7 +456,8 @@
                                                Grid.Column="0"
                                                Grid.RowSpan="2"
                                                Grid.ColumnSpan="2"
-                                               Style="{StaticResource MovieCardFrame}">
+                                               Style="{StaticResource MovieCardFrame}"
+                                               WidthRequest="180">
                                             <StackLayout Orientation="Vertical"
                                                          Padding="0"
                                                          Margin="0"
@@ -447,7 +476,9 @@
                                                              WidthRequest="100"
                                                              HeightRequest="75">
                                                     <Label Text="{Binding Movie.Title}"
-                                                           Style="{StaticResource MovieCardTitle}" />
+                                                           Style="{StaticResource MovieCardTitle}" 
+                                                           LineBreakMode="TailTruncation"
+                                                           MaxLines="3"/>
                                                     <Label Text="{Binding Movie.Year}"
                                                            Style="{StaticResource MovieCardYear}" />
                                                 </StackLayout>
@@ -463,6 +494,7 @@
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
                                                      WidthRequest="30"
+                                                     Margin="0,8,8,0"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -500,7 +532,8 @@
                                                Grid.Column="0"
                                                Grid.RowSpan="2"
                                                Grid.ColumnSpan="2"
-                                               Style="{StaticResource MovieCardFrame}">
+                                               Style="{StaticResource MovieCardFrame}"
+                                               WidthRequest="180">
                                             <StackLayout Orientation="Vertical"
                                                          Padding="0"
                                                          Margin="0"
@@ -518,7 +551,9 @@
                                                              WidthRequest="100"
                                                              HeightRequest="75">
                                                     <Label Text="{Binding Movie.Title}"
-                                                           Style="{StaticResource MovieCardTitle}" />
+                                                           Style="{StaticResource MovieCardTitle}" 
+                                                           LineBreakMode="TailTruncation"
+                                                           MaxLines="3"/>
                                                     <Label Text="{Binding Movie.Year}"
                                                            Style="{StaticResource MovieCardYear}" />
                                                 </StackLayout>
@@ -534,6 +569,7 @@
                                                      CommandParameter="{Binding Movie}"
                                                      Command="{Binding LikeClicked}"
                                                      WidthRequest="30"
+                                                     Margin="0,8,8,0"
                                                      BackgroundColor="Transparent" />
                                     </Grid>
                                 </StackLayout>
@@ -546,4 +582,6 @@
             </StackLayout>
         </ScrollView>
     </controls:PullToRefreshLayout>
+    </Frame>
+    
 </ContentPage>  
