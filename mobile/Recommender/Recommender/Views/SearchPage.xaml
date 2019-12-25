@@ -29,7 +29,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Frame Padding="0"
-                   CornerRadius="10"
+                   CornerRadius="30"
                    BackgroundColor="#d5d9e5"
                    Opacity="0.35"
                    Margin="7,0,7,0">
