@@ -58,7 +58,7 @@
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
-                <!--<Setter Property="BackgroundImageSource" Value="background.png"/>-->
+                <Setter Property="BackgroundImageSource" Value="final_background.png"/>
             </Style>
 
              <!--This is for the side panels of the background that are not in the scope of the content page background--> 

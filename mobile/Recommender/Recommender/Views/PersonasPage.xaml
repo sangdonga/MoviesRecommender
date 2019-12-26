@@ -9,27 +9,7 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="End"
                  HorizontalOptions="Center">
-        <!--<Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="100" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Image Grid.Row="0"
-                   Grid.Column="0"
-                   Source="nav_background.png"
-                   Aspect="AspectFill"></Image>
-            <Label Text="Choose a Persona"
-                   FontFamily="{StaticResource AkagiProExtraBold}"
-                   FontSize="Large"
-                   Margin="20"
-                   TextColor="White"
-                   Grid.Row="0"
-                   Grid.Column="0"
-                   VerticalOptions="Center"></Label>
-        </Grid>-->
-        <StackLayout
+            <StackLayout
             x:Name="PersonasStackLayout"
             HorizontalOptions="Center"
             VerticalOptions="Center"

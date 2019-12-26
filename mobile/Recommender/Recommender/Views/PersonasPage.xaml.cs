@@ -25,7 +25,7 @@ namespace Recommender.Views
 
         private async void RedirectToCustomPage(object sender, EventArgs e)
         {
-            //await Navigation.PushModalAsync(new CustomOnboardInfo()).ConfigureAwait(false);
+            await Navigation.PushModalAsync(new GenresCustomPage()).ConfigureAwait(false);
         }
 
         private async void RedirectToMainPage(object sender, EventArgs e)

@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             mc:Ignorable="d"
+             x:Class="Recommender.Views.GenresCustomPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <!--<Image Source="nav_background.png"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="4"
+                       Aspect="AspectFill"></Image>-->
+                <Frame BackgroundColor="Transparent"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="4"
+                       CornerRadius="10"
+                       Margin="30,50,30,5"
+                       BorderColor="WhiteSmoke"
+                       Opacity="0.8">
+                    <StackLayout>
+                        <forms:AnimationView
+                            AutomationProperties.IsInAccessibleTree="True"
+                            AutomationProperties.Name="Selecting Genre Animation"
+                            x:Uid="Genre Animation"
+                            Animation="GenreSelect.json"
+                            AutoPlay="True"
+                            Loop="true"
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand"
+                            HeightRequest="10"
+                            Margin="0,-60,0,-60" />
+                        <Label Text="Select 2-3 genres you're interested in"
+                               FontFamily="{StaticResource GilroyMedium}"
+                               FontSize="Small"
+                               TextColor="Black"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <ImageButton AutomationProperties.IsInAccessibleTree="True"
+                             AutomationProperties.Name="Action"
+                             HeightRequest="30"
+                             Grid.Row="1"
+                             Grid.Column="1"
+                             Aspect="Fill"
+                             Source="rectangle.png"
+                             BackgroundColor="Transparent"
+                             Command="{Binding ClickGenre}"
+                             CommandParameter="Action"></ImageButton>
+                <Label Grid.Row="1"
+                       Grid.Column="1"
+                       Text="Action"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       Margin="0"
+                       HorizontalOptions="Center"
+                       FontFamily="{StaticResource GilroyMedium}"
+                       FontSize="Medium"></Label>
+                <ImageButton
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Source="check.png"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Start"
+                    IsVisible="{Binding ActionVisibility}">
+                </ImageButton>
+
+                <ImageButton AutomationProperties.IsInAccessibleTree="True"
+                             AutomationProperties.Name="Animation"
+                             Grid.Row="1"
+                             Grid.Column="2"
+                             Source="rectangle.png"
+                             Aspect="Fill"
+                             BackgroundColor="Transparent"
+                             Command="{Binding ClickGenre}"
+                             CommandParameter="Animation"></ImageButton>
+                <Label Grid.Row="1"
+                       Grid.Column="2"
+                       Text="Animation"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       Margin="0"
+                       HorizontalOptions="Center"
+                       FontFamily="{StaticResource GilroyMedium}"
+                       FontSize="Medium"></Label>
+                <ImageButton
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Source="check.png"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Start"
+                    IsVisible="{Binding AnimatedVisibility}">
+                </ImageButton>
+
+                <ImageButton AutomationProperties.IsInAccessibleTree="True"
+                             AutomationProperties.Name="Comedy"
+                             Grid.Row="2"
+                             Grid.Column="1"
+                             Source="rectangle.png"
+                             Aspect="Fill"
+                             BackgroundColor="Transparent"
+                             Command="{Binding ClickGenre}"
+                             CommandParameter="Comedy"></ImageButton>
+                <Label Grid.Row="2"
+                       Grid.Column="1"
+                       Text="Comedy"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       Margin="0"
+                       HorizontalOptions="Center"
+                       FontFamily="{StaticResource GilroyMedium}"
+                       FontSize="Medium"></Label>
+                <ImageButton
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Source="check.png"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Start"
+                    IsVisible="{Binding ComedyVisibility}">
+                </ImageButton>
+
+                <ImageButton AutomationProperties.IsInAccessibleTree="True"
+                             AutomationProperties.Name="Drama"
+                             Grid.Row="2"
+                             Grid.Column="2"
+                             Source="rectangle.png"
+                             Aspect="Fill"
+                             BackgroundColor="Transparent"
+                             Command="{Binding ClickGenre}"
+                             CommandParameter="Drama"></ImageButton>
+                <Label Grid.Row="2"
+                       Grid.Column="2"
+                       Text="Drama"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       Margin="0"
+                       HorizontalOptions="Center"
+                       FontFamily="{StaticResource GilroyMedium}"
+                       FontSize="Medium"></Label>
+                <ImageButton
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Source="check.png"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Start"
+                    IsVisible="{Binding DramaVisibility}">
+                </ImageButton>
+
+                <ImageButton AutomationProperties.IsInAccessibleTree="True"
+                             AutomationProperties.Name="Horror"
+                             Grid.Row="3"
+                             Grid.Column="1"
+                             Source="rectangle.png"
+                             Aspect="Fill"
+                             BackgroundColor="Transparent"
+                             Command="{Binding ClickGenre}"
+                             CommandParameter="Horror"></ImageButton>
+                <Label Grid.Row="3"
+                       Grid.Column="1"
+                       Text="Horror"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       Margin="0"
+                       HorizontalOptions="Center"
+                       FontFamily="{StaticResource GilroyMedium}"
+                       FontSize="Medium"></Label>
+                <ImageButton
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Source="check.png"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Start"
+                    IsVisible="{Binding HorrorVisibility}">
+                </ImageButton>
+
+                <ImageButton AutomationProperties.IsInAccessibleTree="True"
+                             AutomationProperties.Name="Romance"
+                             Grid.Row="3"
+                             Grid.Column="2"
+                             Source="rectangle.png"
+                             Aspect="Fill"
+                             BackgroundColor="Transparent"
+                             Command="{Binding ClickGenre}"
+                             CommandParameter="Romance"></ImageButton>
+                <Label Grid.Row="3"
+                       Grid.Column="2"
+                       Text="Romance"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       Margin="0"
+                       HorizontalOptions="Center"
+                       FontFamily="{StaticResource GilroyMedium}"
+                       FontSize="Medium"></Label>
+                <ImageButton
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Source="check.png"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Start"
+                    IsVisible="{Binding RomanceVisibility}">
+                </ImageButton>
+
+            </Grid>
+            <Grid BackgroundColor="Transparent"
+                  VerticalOptions="FillAndExpand"
+                  Margin="10,10,10,10">
+                <Button x:Name="NextButton"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Padding="3"
+                        VerticalOptions="CenterAndExpand"
+                        AutomationProperties.IsInAccessibleTree="true"
+                        AutomationProperties.Name="Proceed with Selected Genres"
+                        Style="{StaticResource Accent2ColorButtonStyle}"
+                        BackgroundColor="{Binding NextButtonBackgroundColor}"
+                        BorderColor="{Binding ButtonBorder}"
+                        BorderWidth="1"
+                        FontAttributes="Bold"
+                        Text="Next"
+                        Clicked="RedirectToMovieCarousel" />    
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
