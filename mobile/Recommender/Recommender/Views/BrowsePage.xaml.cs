@@ -37,7 +37,7 @@ namespace Recommender.Views
         async void OnItemSelected(object sender, EventArgs e)
         {
             var item = (Xamarin.Forms.StackLayout)sender;
-            //await Navigation.PushModalAsync(new MovieDetailPage((MovieDetailViewModel)item.BindingContext)).ConfigureAwait(false);
+            await Navigation.PushModalAsync(new MovieDetailPage((MovieDetailViewModel)item.BindingContext)).ConfigureAwait(false);
         }
     }
 }

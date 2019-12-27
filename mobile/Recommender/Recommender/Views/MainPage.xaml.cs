@@ -32,7 +32,7 @@ namespace Recommender.Views
             {
                 IconImageSource = "home.xml",
                 Title = "Home",
-                BarBackgroundColor = Color.White,
+                BarBackgroundColor = Color.Transparent,
                 BarTextColor = Color.Blue
             };
 
@@ -40,7 +40,7 @@ namespace Recommender.Views
             {
                 IconImageSource = "search.xml",
                 Title = "Search",
-                BarBackgroundColor = Color.White,
+                BarBackgroundColor = Color.Transparent,
                 BarTextColor = Color.Blue
             };
 
@@ -48,7 +48,7 @@ namespace Recommender.Views
             {
                 IconImageSource = "favorite.xml",
                 Title = "Favorites",
-                BarBackgroundColor = Color.White,
+                BarBackgroundColor = Color.Transparent,
                 BarTextColor = Color.Blue
             };
 

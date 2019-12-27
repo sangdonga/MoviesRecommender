@@ -93,16 +93,18 @@
                                                     Style="{StaticResource FastImageStyle}"
                                                     Source="{Binding Movie.ImageUrl}" />
 
-                                                <StackLayout Orientation="Vertical" Style="{StaticResource MovieCardBackgroundColor}"
-                                                             Margin="5,0,0,0" Padding="0, 0, 0, 0" 
-                                                             WidthRequest="100" 
-                                                             HeightRequest="70">
+                                                <StackLayout Orientation="Vertical"
+                                                            Style="{StaticResource MovieCardBackgroundColor}"
+                                                            Margin="5,0,0,0"
+                                                            Padding="0, 0, 0, 0"
+                                                            WidthRequest="100"
+                                                            HeightRequest="75">
                                                     <Label Text="{Binding Movie.Title}"
-                                                           Style="{StaticResource MovieCardTitle}" 
-                                                           LineBreakMode="TailTruncation"
-                                                           MaxLines="3"/>
+                                                    Style="{StaticResource MovieCardTitle}" 
+                                                    LineBreakMode="TailTruncation"
+                                                    MaxLines="3"/>
                                                     <Label Text="{Binding Movie.Year}"
-                                                           Style="{StaticResource MovieCardYear}" />
+                                                    Style="{StaticResource MovieCardYear}" />
                                                 </StackLayout>
                                             </StackLayout>
                                         </Frame>

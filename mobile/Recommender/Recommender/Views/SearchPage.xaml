@@ -33,7 +33,9 @@
                    BackgroundColor="#d5d9e5"
                    Opacity="0.35"
                    Margin="7,0,7,0">
-                <SearchBar x:Name="userMovieQuery_entry"
+
+                    <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+                        <SearchBar x:Name="userMovieQuery_entry"
                            Placeholder="Search..."
                            AutomationProperties.IsInAccessibleTree="true"
                            AutomationProperties.Name="Search for Movies"
@@ -54,6 +56,13 @@
                                     Android="Gray"/>
                     </SearchBar.PlaceholderColor>
                 </SearchBar>
+                        <ImageButton Source="scanner.png"
+                                     BackgroundColor="Transparent"
+                                     HorizontalOptions="FillAndExpand"
+                                     Margin="5"
+                                     Clicked="ScanCode"/>
+                    </StackLayout>
+                
             </Frame>
         </Grid>
         <Label Text="No results were found."

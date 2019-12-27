@@ -217,5 +217,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\rectangle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\scanner.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

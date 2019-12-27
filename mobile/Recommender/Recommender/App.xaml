@@ -101,6 +101,7 @@
 
             <Style x:Key="MovieCardBackgroundColor" TargetType="StackLayout">
                 <Setter Property="BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
             </Style>
 
              <!--Styles used in Onboarding Pages--> 
